@@ -36,4 +36,5 @@ jobs:
 
       - name: Deploy to GitHub pages
         run: |
+          git remote set-url origin https://git:"${GITHUB_TOKEN}"@github.com/"${GITHUB_REPOSITORY}".git
           npx gh-pages -d out -u "${GITHUB_ACTOR} <oskar.codes@gmail.com>" -m "Deployment: '$(jq -r .head_commit.message < "$GITHUB_EVENT_PATH")'"
