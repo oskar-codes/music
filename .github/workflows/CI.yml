@@ -35,6 +35,9 @@ jobs:
           sudo apt-get install jq
 
       - name: Deploy to GitHub pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          export $(cat .env | grep -v '#' | awk '/=/ {print $1}')
           git remote set-url origin https://git:"${GITHUB_TOKEN}"@github.com/"${GITHUB_REPOSITORY}".git
           npx gh-pages -d out -u "${GITHUB_ACTOR} <oskar.codes@gmail.com>" -m "Deployment: '$(jq -r .head_commit.message < "$GITHUB_EVENT_PATH")'"
