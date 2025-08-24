@@ -24,20 +24,25 @@ jobs:
             cmark-gfm "$f" > "out/$name.html"
           done
 
-      - name: Setup NodeJS
-        uses: actions/setup-node@v3
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out
+
+      # - name: Setup NodeJS
+      #   uses: actions/setup-node@v3
       
-      - name: Install Node Modules
-        run: npm install --include=dev
+      # - name: Install Node Modules
+      #   run: npm install --include=dev
 
-      - name: Download jq
-        run: |
-          sudo apt-get install jq
+      # - name: Download jq
+      #   run: |
+      #     sudo apt-get install jq
 
-      - name: Deploy to GitHub pages
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          export $(cat .env | grep -v '#' | awk '/=/ {print $1}')
-          git remote set-url origin https://git:"${GITHUB_TOKEN}"@github.com/"${GITHUB_REPOSITORY}".git
-          npx gh-pages -d out -u "${GITHUB_ACTOR} <oskar.codes@gmail.com>" -m "Deployment: '$(jq -r .head_commit.message < "$GITHUB_EVENT_PATH")'"
+      # - name: Deploy to GitHub pages
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   run: |
+      #     git remote set-url origin https://git:"${GITHUB_TOKEN}"@github.com/"${GITHUB_REPOSITORY}".git
+      #     npx gh-pages -d out -u "${GITHUB_ACTOR} <oskar.codes@gmail.com>" -m "Deployment: '$(jq -r .head_commit.message < "$GITHUB_EVENT_PATH")'"
