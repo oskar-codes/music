@@ -36,4 +36,4 @@ jobs:
 
       - name: Deploy to GitHub pages
         run: |
-          npx gh-pages -d dist -u "${GITHUB_ACTOR} <oskar.codes@gmail.com>" -m "Deployment: '$(jq -r .head_commit.message < "$GITHUB_EVENT_PATH")'"
+          npx gh-pages -d out -u "${GITHUB_ACTOR} <oskar.codes@gmail.com>" -m "Deployment: '$(jq -r .head_commit.message < "$GITHUB_EVENT_PATH")'"
