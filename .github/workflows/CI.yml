@@ -24,8 +24,16 @@ jobs:
             cmark-gfm "$f" > "out/$name.html"
           done
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./out
+      - name: Setup NodeJS
+      - uses: actions/setup-node@v3
+      
+      - name: Install Node Modules
+        run: npm install --include=dev
+
+      - name: Download jq
+        run: |
+          sudo apt-get install jq
+
+      - name: Deploy to GitHub pages
+        run: |
+          npx gh-pages -d dist -u "${GITHUB_ACTOR} <oskar.codes@gmail.com>" -m "Deployment: '$(jq -r .head_commit.message < "$GITHUB_EVENT_PATH")'"
