@@ -3,10 +3,14 @@ name: Build and Deploy Markdown with GFM
 on:
   push:
     branches: [ main ]
+  
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -24,7 +28,7 @@ jobs:
             cmark-gfm "$f" > "out/$name.html"
           done
 
-      - name: Deploy
+      - name: Deploy to GitHub pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
