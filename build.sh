@@ -13,13 +13,13 @@ check_error()
   if [ $ret -ne 0 ]; then
     echo -e "${COLOR}Received non-zero ($ret) exit code. Cleaning up and shutting down.${NC}"
     clean_up
-    exit "$ret"
+    exit 1
   fi
 }
 
 pre_processing()
 {
-  f=$0
+  f=$1
   start_time=`date +%s%N | cut -b1-13`
   pre=$(node processing/pre-processing.js -file="$f")
   check_error
