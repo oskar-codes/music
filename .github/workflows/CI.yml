@@ -20,6 +20,12 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y cmark-gfm
 
+      - name: Install Node dependencies
+        run: |
+          cd processing
+          npm install
+          cd ..
+
       - name: Make build.sh executable
         run: chmod +x ./build.sh
         
