@@ -8,6 +8,7 @@
 
 import { readFile } from 'fs/promises';
 import parseArgs from 'args-parser';
+import { pipe } from './pipeline.js';
 
 function noop(markdown) {
   return markdown;
@@ -20,8 +21,9 @@ function noop(markdown) {
   const result = await readFile(args.file)
   const markdown = result.toString();
 
-  const processed = noop(markdown);
+  const pipeline = pipe(noop);
 
+  const processed = pipeline.run(markdown);
   console.log(processed);
 
 })();
