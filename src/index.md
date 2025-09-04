@@ -8,20 +8,20 @@ Note that I am in no way a musical expert and I have no formal education in musi
 
 # Table of contents
 
-### I. The building blocks
-- Notes
-- Intervals
+### [I. The building blocks](the-building-blocks/index.md)
+- [Notes](the-building-blocks/index.md#notes)
+- [Intervals](the-building-blocks/index.md#intervals)
 
-### II. Where the theory starts
-- Scales
-- Chords
-- The circle of fifths
+### [II. Where the theory starts](where-the-theory-starts/index.md)
+- [Scales](where-the-theory-starts/index.md#scales)
+- [Chords](where-the-theory-starts/index.md#chords)
+- [The circle of fifths](where-the-theory-starts/index.md#the-circle-of-fifths)
 
-### III. Deeper into chords and scales
-- Advanced chords
-- Advanced scales
-- Chords are scales
+### [III. Deeper into chords and scales](deeper-into-chords-and-scales/index.md)
+- [Advanced chords](deeper-into-chords-and-scales/index.md#advanced-chords)
+- [Advanced scales](deeper-into-chords-and-scales/index.md#advanced-scales)
+- [Chords are scales](deeper-into-chords-and-scales/index.md#chords-are-scales)
 
-### IV. How to apply this
-- Chord voicings
-- Chord progressions
+### [IV. Putting it together](putting-it-together/index.md)
+- [Chord progressions](putting-it-together/index.md#chord-progressions)
+- [Chord voicings](putting-it-together/index.md#chord-voicings)
