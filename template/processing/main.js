@@ -9,8 +9,13 @@
     setHtmlLinks() {
       const links = document.querySelectorAll('a');
       for (const a of links) {
-        if (a.href.endsWith('.md')) {
-          a.href = a.href.replace(/\.md$/, '.html');
+        if (a.href.includes('index.md')) {
+          a.href = a.href.replace(/index\.md/, '');
+          continue;
+        }
+
+        if (a.href.includes('.md')) {
+          a.href = a.href.replace(/\.md/, '.html');
         }
       }
     },
@@ -18,7 +23,7 @@
     setHeaderIds() {
       const headers = document.querySelectorAll('h1,h2,h3,h4,h5,h6');
       for (const header of headers) {
-        header.id = header.textContent.toLowerCase().replace(/ /g, '-');
+        header.id = header.textContent.toLowerCase().replace(/ /g, '-').replace(/[^a-z0-9]/g, '');
       }
     },
     
