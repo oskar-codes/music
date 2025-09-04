@@ -1,4 +1,4 @@
-# IV. Putting it together
+# V. Putting it together
 
 ## Chord progressions
 

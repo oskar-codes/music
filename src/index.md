@@ -17,11 +17,14 @@ Note that I am in no way a musical expert and I have no formal education in musi
 - [Chords](where-the-theory-starts/index.md#chords)
 - [The circle of fifths](where-the-theory-starts/index.md#the-circle-of-fifths)
 
-### [III. Deeper into chords and scales](deeper-into-chords-and-scales/index.md)
-- [Advanced chords](deeper-into-chords-and-scales/index.md#advanced-chords)
-- [Advanced scales](deeper-into-chords-and-scales/index.md#advanced-scales)
-- [Chords are scales](deeper-into-chords-and-scales/index.md#chords-are-scales)
+### [III. Deeper into scales](deeper-into-scales/index.md)
+- [Advanced scales](deeper-into-scales/index.md#advanced-scales)
+- [Modes](deeper-into-scales/index.md#modes)
 
-### [IV. Putting it together](putting-it-together/index.md)
+### [IV. Deeper into chords](deeper-into-chords/index.md)
+- [Advanced chords](deeper-into-chords/index.md#advanced-chords)
+- [Chords are scales](deeper-into-chords/index.md#chords-are-scales)
+
+### [V. Putting it together](putting-it-together/index.md)
 - [Chord progressions](putting-it-together/index.md#chord-progressions)
 - [Chord voicings](putting-it-together/index.md#chord-voicings)
