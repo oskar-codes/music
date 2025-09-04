@@ -4,6 +4,17 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/music/github-markdown.css">
     <script src="/music/hljs/highlight.min.js"></script>
+    <script src="/music/qwerty-hancock.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$']],
+          displayMath: [['$$', '$$']]
+        },
+        messageStyle: "none"
+      };
+    </script>
     <script src="/music/processing/main.js"></script>
     <style>
       body {
@@ -34,6 +45,14 @@
   <body class="markdown-body">
 <h1>I. The building blocks</h1>
 <h2>Notes</h2>
+<p><em>Notes</em> are distinct sounds that act as the most basic building block of all music. They represent a pitch, and a duration. In western musical theory, there are 12 distinct notes. The step between two adjacent notes from these 12 is called a semitone. <em>Sharpening</em> a note indicates playing the note one semitone above, and is written using the $\sharp$ symbol. <em>Flattening</em> indicates playing the note one semitone below, and is written using the $\flat$ symbol. Two semitones are called a whole tone.</p>
+<p>The 12 notes are based on 7 notes named as follows: $C$, $D$, $E$, $F$, $G$, $A$, $B$. Between $E$ and $F$ and between $B$ and $C$, there is only a semitone, while between all other adjacent notes there is a whole tone. By sharpening or flattening some of these notes, we can obtain the remaining 5 notes.  For example, by sharpening $C$, we obtain $C\sharp$, which is the same note as $D\flat$, obtained by flattening $D$.</p>
+<p>Thus, the remaining notes are $C\sharp$, $D\sharp$, $F\sharp$, $G\sharp$ and $A\sharp$, or equivalently $D\flat$, $E\flat$, $G\flat$, $A\flat$ and $B\flat$. Combining these with the original 7 notes, we obtain the full set of 12 distinct notes:</p>
+<blockquote>
+<p>[!PIANO]
+{&quot;startNote&quot;: &quot;C4&quot;, &quot;octaves&quot;: 1, &quot;displayNoteNames&quot;: true}</p>
+</blockquote>
+<p>This set of 12 notes is called the <em>Chromatic scale</em>, and will be explained in greater detail in a <a href="../where-the-theory-starts/index.md#scales">further section about scales</a>.</p>
 <h2>Intervals</h2>
   </body>
 </html>
