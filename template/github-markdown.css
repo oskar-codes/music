@@ -1374,6 +1374,14 @@ from https://github.com/mjbvz/vscode-github-markdown-preview-style/blob/master/d
 .piano {
   margin: 20px auto;
   width: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.piano > p {
+  color: var(--fgColor-muted);
 }
 
 .piano li::after {

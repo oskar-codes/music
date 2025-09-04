@@ -8,7 +8,7 @@ The 12 notes are based on 7 notes named as follows: $C$, $D$, $E$, $F$, $G$, $A$
 Thus, the remaining notes are $C\sharp$, $D\sharp$, $F\sharp$, $G\sharp$ and $A\sharp$, or equivalently $D\flat$, $E\flat$, $G\flat$, $A\flat$ and $B\flat$. Combining these with the original 7 notes, we obtain the full set of 12 distinct notes:
 
 > [!PIANO]
-> {"startNote": "C4", "octaves": 1, "displayNoteNames": true}
+> {"startNote": "C4", "octaves": 1, "displayNoteNames": true, "label": "The 12 notes"}
 
 This set of 12 notes is called the _Chromatic scale_, and will be explained in greater detail in a [further section about scales](../where-the-theory-starts/index.md#scales).
 
