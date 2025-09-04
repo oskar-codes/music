@@ -26,6 +26,52 @@
         header.id = header.textContent.toLowerCase().replace(/ /g, '-').replace(/[^a-z0-9]/g, '');
       }
     },
+
+    setPianos() {
+      let index = 0;
+      const blockquotes = document.querySelectorAll('blockquote');
+      for (const blockquote of blockquotes) {
+        const text = blockquote.textContent.replace(/\s/g, '');
+        if (!text.includes('[!PIANO]')) continue;
+
+        const container = document.createElement('div');
+        container.classList.add('piano');
+
+        const div = document.createElement('div');
+        div.id = `piano-${index}`;
+
+        container.appendChild(div);
+        blockquote.parentNode.insertBefore(container, blockquote);
+        blockquote.parentNode.removeChild(blockquote);
+
+        const dataText = text.replace('[!PIANO]', '');
+        const data = JSON.parse(dataText);
+
+        const {
+          startNote = 'A4',
+          octaves = 2,
+          highlightedNotes = [],
+          displayNoteNames = false
+        } = data;
+
+        window.keyboard = new QwertyHancock({
+          id: div.id,
+          width: octaves * 300,
+          height: 150,
+          startNote,
+          octaves,
+          whiteNotesColour: 'white',
+          blackNotesColour: 'black',
+          activeColour: '#78cbcbff',
+          musicalTyping: false,
+          enableMouse: false,
+          displayNoteNames,
+          highlightedNotes
+        });
+
+        index++;
+      }
+    },
     
     addAlerts() {
       const alerts = ['note', 'warning', 'important', 'caution', 'tip'];

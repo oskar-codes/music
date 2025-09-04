@@ -1364,3 +1364,29 @@ from https://github.com/mjbvz/vscode-github-markdown-preview-style/blob/master/d
   color: var(--color-prettylights-syntax-markup-deleted-text);
   background-color: var(--color-prettylights-syntax-markup-deleted-bg);
 }
+
+
+/*
+          /!\
+  CUSTOM CSS FOLLOWS
+*/
+
+.piano {
+  margin: 20px auto;
+  width: fit-content;
+}
+
+.piano li::after {
+  content: attr(data-note-name);
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  white-space: nowrap;
+  color: black;
+}
+
+.piano li[data-note-type="black"]::after {
+  color: white;
+}

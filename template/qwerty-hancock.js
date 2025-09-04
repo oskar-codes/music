@@ -78,6 +78,9 @@
       borderColour: user_settings.borderColour || '#000',
       keyboardLayout: user_settings.keyboardLayout || 'en',
       musicalTyping: user_settings.musicalTyping === false ? false : true,
+      enableMouse: user_settings.enableMouse ?? true,
+      displayNoteNames: user_settings.displayNoteNames ?? false,
+      highlightedNotes: user_settings.highlightedNotes || []
     };
 
     container = document.getElementById(settings.id);
@@ -237,7 +240,12 @@
    * @param  {element} el White key DOM element.
    */
   var styleWhiteKey = function (key) {
-    key.el.style.backgroundColor = settings.whiteKeyColour;
+    
+    if (settings.highlightedNotes.includes(key.id)) {
+      key.el.style.backgroundColor = settings.activeColour;
+    } else {
+      key.el.style.backgroundColor = settings.whiteKeyColour;
+    }
     key.el.style.border = '1px solid ' + settings.borderColour;
     key.el.style.borderRight = 0;
     key.el.style.height = settings.height + 'px';
@@ -260,7 +268,11 @@
     var white_key_width = getWhiteKeyWidth(getTotalWhiteKeys()),
       black_key_width = Math.floor(white_key_width / 2);
 
-    key.el.style.backgroundColor = settings.blackKeyColour;
+    if (settings.highlightedNotes.includes(key.id)) {
+      key.el.style.backgroundColor = settings.activeColour;
+    } else {
+      key.el.style.backgroundColor = settings.blackKeyColour;
+    }
     key.el.style.border = '1px solid ' + settings.borderColour;
     key.el.style.position = 'absolute';
     key.el.style.left =
@@ -361,6 +373,9 @@
     key.el = document.createElement('li');
     key.el.id = key.id;
     key.el.title = key.id;
+    if (settings.displayNoteNames) {
+      key.el.setAttribute('data-note-name', key.id.replace(/[0-9]/g, ''));
+    }
     key.el.setAttribute('data-note-type', key.colour);
 
     styleKey(key);
@@ -546,42 +561,44 @@
     }
 
     // Mouse is clicked down on keyboard element.
-    container.addEventListener('mousedown', function (event) {
-      mouseDown(event.target, that.keyDown);
-    });
-
-    // Mouse is released from keyboard element.
-    container.addEventListener('mouseup', function (event) {
-      mouseUp(event.target, that.keyUp);
-    });
-
-    // Mouse is moved over keyboard element.
-    container.addEventListener('mouseover', function (event) {
-      mouseOver(event.target, that.keyDown);
-    });
-
-    // Mouse is moved out of keyboard element.
-    container.addEventListener('mouseout', function (event) {
-      mouseOut(event.target, that.keyUp);
-    });
-
-    // Device supports touch events.
-    if ('ontouchstart' in document.documentElement) {
-      container.addEventListener('touchstart', function (event) {
+    if (settings.enableMouse) {
+      container.addEventListener('mousedown', function (event) {
         mouseDown(event.target, that.keyDown);
       });
-
-      container.addEventListener('touchend', function (event) {
+  
+      // Mouse is released from keyboard element.
+      container.addEventListener('mouseup', function (event) {
         mouseUp(event.target, that.keyUp);
       });
-
-      container.addEventListener('touchleave', function (event) {
+  
+      // Mouse is moved over keyboard element.
+      container.addEventListener('mouseover', function (event) {
+        mouseOver(event.target, that.keyDown);
+      });
+  
+      // Mouse is moved out of keyboard element.
+      container.addEventListener('mouseout', function (event) {
         mouseOut(event.target, that.keyUp);
       });
-
-      container.addEventListener('touchcancel', function (event) {
-        mouseOut(event.target, that.keyUp);
-      });
+  
+      // Device supports touch events.
+      if ('ontouchstart' in document.documentElement) {
+        container.addEventListener('touchstart', function (event) {
+          mouseDown(event.target, that.keyDown);
+        });
+  
+        container.addEventListener('touchend', function (event) {
+          mouseUp(event.target, that.keyUp);
+        });
+  
+        container.addEventListener('touchleave', function (event) {
+          mouseOut(event.target, that.keyUp);
+        });
+  
+        container.addEventListener('touchcancel', function (event) {
+          mouseOut(event.target, that.keyUp);
+        });
+      }
     }
   };
 
