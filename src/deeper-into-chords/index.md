@@ -1,4 +1,4 @@
-# IV Deeper into chords
+# IV. Deeper into chords
 
 ## Advanced chords
 

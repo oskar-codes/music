@@ -11,6 +11,7 @@ Note that I am in no way a musical expert and I have no formal education in musi
 ### [I. The building blocks](the-building-blocks/index.md)
 - [Notes](the-building-blocks/index.md#notes)
 - [Intervals](the-building-blocks/index.md#intervals)
+- [Transposition](the-building-blocks/index.md#transposition)
 
 ### [II. Where the theory starts](where-the-theory-starts/index.md)
 - [Scales](where-the-theory-starts/index.md#scales)
