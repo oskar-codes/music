@@ -23,7 +23,7 @@
     setHeaderIds() {
       const headers = document.querySelectorAll('h1,h2,h3,h4,h5,h6');
       for (const header of headers) {
-        header.id = header.textContent.toLowerCase().replace(/ /g, '-').replace(/[^a-z0-9]/g, '');
+        header.id = header.textContent.toLowerCase().replace(/ /g, '-').replace(/[^a-z0-9-]/g, '');
       }
     },
 
