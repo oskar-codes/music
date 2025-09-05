@@ -80,6 +80,19 @@
         index++;
       }
     },
+
+    centerBlockquotes() {
+      const blockquotes = document.querySelectorAll('blockquote');
+      for (const blockquote of blockquotes) {
+        const text = blockquote.textContent;
+        if (!text.includes('[!CENTER]')) continue;
+
+        const contents = blockquote.innerHTML.replace('[!CENTER]', '');
+        blockquote.style.textAlign = 'center';
+        blockquote.style.borderLeft = 'none';
+        blockquote.innerHTML = contents;
+      }
+    },
     
     addAlerts() {
       const alerts = ['note', 'warning', 'important', 'caution', 'tip'];
