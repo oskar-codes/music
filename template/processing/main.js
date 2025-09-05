@@ -42,7 +42,8 @@
           octaves = 2,
           highlightedNotes = [],
           displayNoteNames = false,
-          label = ""
+          label = "",
+          useFlats = false
         } = data;
 
         const container = document.createElement('div');
@@ -74,7 +75,8 @@
           musicalTyping: false,
           enableMouse: false,
           displayNoteNames,
-          highlightedNotes
+          highlightedNotes,
+          useFlats
         });
 
         index++;
