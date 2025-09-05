@@ -31,9 +31,9 @@ pre_processing()
 parsing()
 {
   start_time=`date +%s%N | cut -b1-13`
-  html=$(cmark-gfm <<< "$pre" -e footnotes -e table -e strikethrough -e autolink -e tagfilter -e tasklist --unsafe)
+  html=$(cmark-gfm "$f" -e footnotes -e table -e strikethrough -e autolink -e tagfilter -e tasklist --unsafe)
   check_error
-  echo "$html" > out/tmp/.tmp_html.html
+  echo "$html" > out/tmp/.tmp_body.html
   end_time=`date +%s%N | cut -b1-13`
 
   echo "   - cmark-gfm done. (`expr $end_time - $start_time`ms)"
@@ -69,13 +69,13 @@ find src -name "*.md" | while read f; do
   echo "-> $f"
 
   # Run pre-processing (markdown -> markdown)
-  pre_processing $f
+  # pre_processing $f
 
   # Run parsing (markdown -> html)
   parsing
 
   # Run post-processing (html -> html)
-  post_processing
+  # post_processing
 
   # Split template
   head -n -3 template/template.html > out/tmp/.tmp_header.html
