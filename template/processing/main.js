@@ -41,6 +41,7 @@
           startNote = 'A4',
           octaves = 2,
           highlightedNotes = [],
+          secondaryHighlightedNotes = [],
           displayNoteNames = false,
           label = "",
           useFlats = false
@@ -72,10 +73,12 @@
           whiteNotesColour: 'white',
           blackNotesColour: 'black',
           activeColour: '#78cbcbff',
+          secondaryActiveColour: '#8fe276ff', // '#cd8ea9ff'
           musicalTyping: false,
           enableMouse: false,
           displayNoteNames,
           highlightedNotes,
+          secondaryHighlightedNotes,
           useFlats
         });
 

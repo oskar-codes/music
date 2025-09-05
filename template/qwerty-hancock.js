@@ -75,12 +75,14 @@
       whiteKeyColour: user_settings.whiteKeyColour || '#fff',
       blackKeyColour: user_settings.blackKeyColour || '#000',
       activeColour: user_settings.activeColour || 'yellow',
+      secondaryActiveColour: user_settings.secondaryActiveColour || 'brown',
       borderColour: user_settings.borderColour || '#000',
       keyboardLayout: user_settings.keyboardLayout || 'en',
       musicalTyping: user_settings.musicalTyping === false ? false : true,
       enableMouse: user_settings.enableMouse ?? true,
       displayNoteNames: user_settings.displayNoteNames ?? false,
       highlightedNotes: user_settings.highlightedNotes || [],
+      secondaryHighlightedNotes: user_settings.secondaryHighlightedNotes || [],
       useFlats: user_settings.useFlats ?? false
     };
 
@@ -244,6 +246,8 @@
     
     if (settings.highlightedNotes.includes(key.id)) {
       key.el.style.backgroundColor = settings.activeColour;
+    } else if (settings.secondaryHighlightedNotes.includes(key.id)) {
+      key.el.style.backgroundColor = settings.secondaryActiveColour;
     } else {
       key.el.style.backgroundColor = settings.whiteKeyColour;
     }
@@ -271,6 +275,8 @@
 
     if (settings.highlightedNotes.includes(key.id)) {
       key.el.style.backgroundColor = settings.activeColour;
+    } else if (settings.secondaryHighlightedNotes.includes(key.id)) {
+      key.el.style.backgroundColor = settings.secondaryActiveColour;
     } else {
       key.el.style.backgroundColor = settings.blackKeyColour;
     }
