@@ -15,7 +15,7 @@ The set of 7 notes forms a _Major scale_, and the set of all 12 notes forms the 
 These 12 notes repeat going up and down octaves. To distinguish two notes in different octaves, the octave number is associated to the name. For example, $\text{A}_4$ denotes the note $\text{A}$ in the fourth octave. To number the octaves, the A440 pitch standard[^1] defines $\text{A}_4$ as having the pitch 440 Hz, and all other notes are derived from it. Doubling (or halving) moves a note up (or down) an octave. For example, $\text{A}_5$ is 880 Hz and $\text{A}_3$ is 220 Hz. All other pitches are derived from it, following a tuning system called a Musical temperament[^2]. There are several different temperaments, each meeting different requirements.
 
 ## Intervals
-_Intervals_ are differences in pitch between two notes. For example as seen before, a whole tone (also called major second) is an interval of two semitones. Below are all the intervals between $\text{C}$ and the 12 notes.
+_Intervals_ are differences in pitch between two notes. For example as seen before, a whole tone (also called major second) is an interval of two semitones. Below are all the intervals between $\text{C}$ and the 12 notes. See [here](../resources/intervals.md) for a visualization of them.
 
 | No. semitones | Note               | Interval name (Major, Minor or Perfect) | Interval name (Augmented or Diminished) |
 |:-------------:| -------------------| ----------------------------------------| --------------------------------------- |
