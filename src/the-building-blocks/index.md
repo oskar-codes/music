@@ -12,6 +12,8 @@ Thus, the remaining notes are $\text{C}\sharp$, $\text{D}\sharp$, $\text{F}\shar
 
 The set of 7 notes forms a _Major scale_, and the set of all 12 notes forms the _Chromatic scale_. These will be explained further in [the section about scales](../where-the-theory-starts/index.md#scales).
 
+These 12 notes repeat going up and down octaves. To distinguish two notes in different octaves, the octave number is associated to the name. For example, $\text{A}_4$ denotes the note $\text{A}$ in the fourth octave. To number the octaves, the A440 pitch standard[^1] defines $\text{A}_4$ as having the pitch 440 Hz, and all other notes are derived from it. Doubling (or halving) moves a note up (or down) an octave. For example, $\text{A}_5$ is 880 Hz and $\text{A}_3$ is 220 Hz. All other pitches are derived from it, following a tuning system called a Musical temperament[^2]. There are several different temperaments, each meeting different requirements.
+
 ## Intervals
 _Intervals_ are differences in pitch between two notes. For example as seen before, a whole tone (also called major second) is an interval of two semitones. Below are all the intervals between $\text{C}$ and the 12 notes.
 
@@ -60,7 +62,8 @@ A crucial concept to understand in music is _transposition_. The interval system
 
 Transposition works with intervals, but also with any other set of notes. Chords, scales, modes (these are concepts which will be explained later), or entire musical pieces can also be transposed, just by keeping every interval between notes the same, but moving the tonic.
 
----
-
 > [!CENTER]
 > Continue to [II. Where the theory starts](../where-the-theory-starts/index.md) or go back to the [front-page](../index.md).
+
+[^1]: https://en.wikipedia.org/wiki/A440_(pitch_standard)
+[^2]: https://en.wikipedia.org/wiki/Musical_temperament
