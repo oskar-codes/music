@@ -80,7 +80,8 @@
       musicalTyping: user_settings.musicalTyping === false ? false : true,
       enableMouse: user_settings.enableMouse ?? true,
       displayNoteNames: user_settings.displayNoteNames ?? false,
-      highlightedNotes: user_settings.highlightedNotes || []
+      highlightedNotes: user_settings.highlightedNotes || [],
+      useFlats: user_settings.useFlats ?? false
     };
 
     container = document.getElementById(settings.id);
@@ -374,7 +375,15 @@
     key.el.id = key.id;
     key.el.title = key.id;
     if (settings.displayNoteNames) {
-      key.el.setAttribute('data-note-name', key.id.replace(/[0-9]/g, ''));
+      if (key.id.includes("#") && settings.useFlats) {
+        const note = key.id.replace(/[0-9]/g, '').replace('#', '');
+        const newNote = note === 'G' ? 'A' : String.fromCharCode(note.charCodeAt(0) + 1);
+
+        key.el.setAttribute('data-note-name', `${newNote}♭`);
+      } else {
+        const note = key.id.replace(/[0-9]/g, '').replace('#', '♯');
+        key.el.setAttribute('data-note-name', `${note}`);
+      }
     }
     key.el.setAttribute('data-note-type', key.colour);
 
