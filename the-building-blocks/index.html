@@ -46,13 +46,135 @@
 <h1>I. The building blocks</h1>
 <h2>Notes</h2>
 <p><em>Notes</em> are distinct sounds that act as the most basic building block of all music. They represent a pitch, and a duration. In western musical theory, there are 12 distinct notes. The step between two adjacent notes from these 12 is called a semitone. <em>Sharpening</em> a note indicates playing the note one semitone above, and is written using the $\sharp$ symbol. <em>Flattening</em> indicates playing the note one semitone below, and is written using the $\flat$ symbol. Two semitones are called a whole tone.</p>
-<p>The 12 notes are based on 7 notes named as follows: $C$, $D$, $E$, $F$, $G$, $A$, $B$. Between $E$ and $F$ and between $B$ and $C$, there is only a semitone, while between all other adjacent notes there is a whole tone. By sharpening or flattening some of these notes, we can obtain the remaining 5 notes.  For example, by sharpening $C$, we obtain $C\sharp$, which is the same note as $D\flat$, obtained by flattening $D$.</p>
-<p>Thus, the remaining notes are $C\sharp$, $D\sharp$, $F\sharp$, $G\sharp$ and $A\sharp$, or equivalently $D\flat$, $E\flat$, $G\flat$, $A\flat$ and $B\flat$. Combining these with the original 7 notes, we obtain the full set of 12 distinct notes:</p>
+<p>The 12 notes are based on 7 notes named as follows: $\text{C}$, $\text{D}$, $\text{E}$, $\text{F}$, $\text{G}$, $\text{A}$, $\text{B}$. Between $\text{E}$ and $\text{F}$ and between $\text{B}$ and $\text{C}$, there is only a semitone, while between all other adjacent notes there is a whole tone. By sharpening or flattening some of these notes, we can obtain the remaining 5 notes. For example, by sharpening $\text{C}$, we obtain $C\sharp$, which is the same note as $D\flat$, obtained by flattening $\text{D}$. Two distinct note notations describing the same note are called <em>enharmonically equivalent</em>.</p>
+<p>Thus, the remaining notes are $\text{C}\sharp$, $\text{D}\sharp$, $\text{F}\sharp$, $\text{G}\sharp$ and $\text{A}\sharp$, or equivalently $\text{D}\flat$, $\text{E}\flat$, $\text{G}\flat$, $\text{A}\flat$ and $\text{B}\flat$. Combining these with the original 7 notes, we obtain the full set of 12 distinct notes:</p>
 <blockquote>
 <p>[!PIANO]
-{&quot;startNote&quot;: &quot;C4&quot;, &quot;octaves&quot;: 1, &quot;displayNoteNames&quot;: true}</p>
+{&quot;startNote&quot;: &quot;C4&quot;, &quot;octaves&quot;: 1, &quot;displayNoteNames&quot;: true, &quot;label&quot;: &quot;The 12 notes&quot;}</p>
 </blockquote>
-<p>This set of 12 notes is called the <em>Chromatic scale</em>, and will be explained in greater detail in a <a href="../where-the-theory-starts/index.md#scales">further section about scales</a>.</p>
+<p>The set of 7 notes forms a <em>Major scale</em>, and the set of all 12 notes forms the <em>Chromatic scale</em>. These will be explained further in <a href="../where-the-theory-starts/index.md#scales">the section about scales</a>.</p>
 <h2>Intervals</h2>
+<p><em>Intervals</em> are differences in pitch between two notes. For example as seen before, a whole tone (also called major second) is an interval of two semitones. Below are all the intervals between $\text{C}$ and the 12 notes.</p>
+<table>
+<thead>
+<tr>
+<th align="center">No. semitones</th>
+<th>Note</th>
+<th>Interval name (Major, Minor or Perfect)</th>
+<th>Interval name (Augmented or Diminished)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0</td>
+<td>$\text{C}$</td>
+<td>Perfect unison</td>
+<td>Diminished second</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td>$\text{C}\sharp$</td>
+<td>Minor second</td>
+<td>Augmented unison</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td>$\text{D}$</td>
+<td>Major second</td>
+<td>Diminished third</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td>$\text{D}\sharp$</td>
+<td>Minor third</td>
+<td>Augmented second</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td>$\text{E}$</td>
+<td>Major third</td>
+<td>Diminished fourth</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td>$\text{F}$</td>
+<td>Perfect fourth</td>
+<td>Augmented third</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td>$\text{F}\sharp$</td>
+<td>Tritone</td>
+<td>Diminished fifth / Augmented fourth</td>
+</tr>
+<tr>
+<td align="center">7</td>
+<td>$\text{G}$</td>
+<td>Perfect fifth</td>
+<td>Diminished sixth</td>
+</tr>
+<tr>
+<td align="center">8</td>
+<td>$\text{G}\sharp$</td>
+<td>Minor sixth</td>
+<td>Augmented fifth</td>
+</tr>
+<tr>
+<td align="center">9</td>
+<td>$\text{A}$</td>
+<td>Major sixth</td>
+<td>Diminished seventh</td>
+</tr>
+<tr>
+<td align="center">10</td>
+<td>$\text{A}\sharp$</td>
+<td>Minor seventh</td>
+<td>Augmented sixth</td>
+</tr>
+<tr>
+<td align="center">11</td>
+<td>$\text{B}$</td>
+<td>Major seventh</td>
+<td>Diminished octave</td>
+</tr>
+<tr>
+<td align="center">12</td>
+<td>$\text{C}$ (oct.)</td>
+<td>Perfect octave</td>
+<td>Augmented seventh</td>
+</tr>
+</tbody>
+</table>
+<p>The terms major, minor, perfect, augmented and diminished are called interval <em>qualities</em> (or <em>modifiers</em>). Along with a scale <em>degree</em> (the number of the note in the scale), they describe an interval. Two intervals are enharmonically equivalent when they both describe the same difference in pitch between two notes.</p>
+<h3>Using major, minor and perfect</h3>
+<p>These qualities relate to the 7 notes shown above (the Major scale).</p>
+<ul>
+<li>An interval is perfect if the second note is the same (or on another octave), or a fifth away (above and below).</li>
+<li>An interval is major if it is not perfect, and the second note is a note from the Major scale.</li>
+<li>An interval is called a tritone if the second note is precisely 6 semitones away.</li>
+<li>An interval is minor if it is not a tritone, and the second note is not a note from the major scale.</li>
+</ul>
+<p>An interval with a major quality refers to an interval where the second note is a note from the Major scale, corresponding to the associated scale degree. For example, $\text{C}$ to $\text{E}$ is a major third because $\text{E}$ is the third note in the Major scale starting from $\text{C}$.</p>
+<p>An interval with a minor quality refers to an interval where the second note is one semitone lower than a major interval. For example, $\text{C}$ to $\text{E}\flat$ is a minor third because $\text{E}\flat$ is one semitone lower than $\text{E}$, which is the third note in the Major scale starting from $\text{C}$.</p>
+<h3>Using augmented and diminished</h3>
+<p>These qualities also relate to the Major scale, but act more directly on the associated scale degree.</p>
+<ul>
+<li>Augmented intervals add a semitone to the scale degree. For example, $\text{C}$ to $\text{G}\sharp$ is an augmented fifth because $\text{G}$ is the fifth note of the Major scale, and the augmented modifier adds a semitone, thus resulting in $\text{G}\sharp$.</li>
+<li>Diminished intervals move the scale degree 1 step down in the Major scale. For example, $\text{C}$ to $\text{E}$ is a diminished fourth, because $\text{F}$ is the fourth note of the Major scale, and the diminished modifier moves it 1 step down in the Major scale, thus resulting in $\text{D}$. That is with the exception of the tritone, which is also called a diminished fifth even though $\text{F}\sharp$ is not in the Major scale.</li>
+</ul>
+<blockquote>
+<p>[!NOTE]
+Both these systems may seem arbitrary, but they are based on the <em>circle of fifths</em>, which is a fundamental concept in music theory. It is explained in <a href="../where-the-theory-starts/index.md#the-circle-of-fifths">the section about the circle of fifths</a>.</p>
+</blockquote>
+<h3>Above the octave</h3>
+<p>Intervals can also extend to above an octave, where the scale degree continues above 8 (the perfect octave). For example, a ninth from $\text{C}$ is $\text{D}$, but an octave further. Even though the second and ninth notes are enharmonically equivalent, they are useful for denoting chords. Notes in chords also often use a slightly different interval naming system, especially in Jazz. See <a href="../deeper-into-chords/index.md#advanced-chords">the section about advanced chords</a>.</p>
+<h2>Transposition</h2>
+<p>A crucial concept to understand in music is <em>transposition</em>. The interval system explained above was based on $\text{C}$, meaning for example that $\text{D}$ was named a major second because it is the second note of the $\textbf{C}$ major scale. But many times, $\text{C}$ is not the reference note and as such any of the other 12 notes could be the &quot;reference&quot; note. This note is called the <em>tonic</em>, or the <em>first degree</em>. For example, choosing $\text{G}$ as the tonic results in $\text{C}$ being the perfect fourth of $\text{G}$, because $\text{C}$ is 5 semitones away from $\text{G}$.</p>
+<p>Transposition works with intervals, but also with any other set of notes. Chords, scales, modes (these are concepts which will be explained later), or entire musical pieces can also be transposed, just by keeping every interval between notes the same, but moving the tonic.</p>
+<hr />
+<blockquote>
+<p>[!CENTER]
+Continue to <a href="../where-the-theory-starts/index.md">II. Where the theory starts</a> or go back to the <a href="../index.md">front-page</a>.</p>
+</blockquote>
   </body>
 </html>

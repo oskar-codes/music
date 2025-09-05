@@ -31,18 +31,8 @@
       let index = 0;
       const blockquotes = document.querySelectorAll('blockquote');
       for (const blockquote of blockquotes) {
-        const text = blockquote.textContent.replace(/\s/g, '');
+        const text = blockquote.textContent;
         if (!text.includes('[!PIANO]')) continue;
-
-        const container = document.createElement('div');
-        container.classList.add('piano');
-
-        const div = document.createElement('div');
-        div.id = `piano-${index}`;
-
-        container.appendChild(div);
-        blockquote.parentNode.insertBefore(container, blockquote);
-        blockquote.parentNode.removeChild(blockquote);
 
         const dataText = text.replace('[!PIANO]', '');
         const data = JSON.parse(dataText);
@@ -51,8 +41,26 @@
           startNote = 'A4',
           octaves = 2,
           highlightedNotes = [],
-          displayNoteNames = false
+          displayNoteNames = false,
+          label = ""
         } = data;
+
+        const container = document.createElement('div');
+        container.classList.add('piano');
+
+        const div = document.createElement('div');
+        div.id = `piano-${index}`;
+
+        container.appendChild(div);
+        if (label) {
+          const p = document.createElement('p');
+          p.textContent = label;
+          container.appendChild(p);
+        }
+
+        blockquote.parentNode.insertBefore(container, blockquote);
+        blockquote.parentNode.removeChild(blockquote);
+
 
         window.keyboard = new QwertyHancock({
           id: div.id,
@@ -70,6 +78,19 @@
         });
 
         index++;
+      }
+    },
+
+    centerBlockquotes() {
+      const blockquotes = document.querySelectorAll('blockquote');
+      for (const blockquote of blockquotes) {
+        const text = blockquote.textContent;
+        if (!text.includes('[!CENTER]')) continue;
+
+        const contents = blockquote.innerHTML.replace('[!CENTER]', '');
+        blockquote.style.textAlign = 'center';
+        blockquote.style.borderLeft = 'none';
+        blockquote.innerHTML = contents;
       }
     },
     
