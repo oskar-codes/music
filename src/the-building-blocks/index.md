@@ -1,7 +1,7 @@
 # I. The building blocks
 
 ## Notes
-_Notes_ are distinct sounds that act as the most basic building block of all music. They represent a pitch, and a duration. In western musical theory, there are 12 distinct notes. The step between two adjacent notes from these 12 is called a semitone. _Sharpening_ a note indicates playing the note one semitone above, and is written using the $\sharp$ symbol. _Flattening_ indicates playing the note one semitone below, and is written using the $\flat$ symbol. Two semitones are called a whole tone.
+_Notes_ are distinct sounds that act as the most basic building block of all music. They represent the pitch played by an instrument. In western musical theory, there are 12 distinct notes. The step between two adjacent notes is called a _semitone_. Two semitones are called a _whole tone_. _Sharpening_ a note indicates playing the note one semitone above, and is written using the $\sharp$ symbol. _Flattening_ indicates playing the note one semitone below, and is written using the $\flat$ symbol. Sharps and flats are called _accidentals_.
 
 The 12 notes are based on 7 notes named as follows: $\text{C}$, $\text{D}$, $\text{E}$, $\text{F}$, $\text{G}$, $\text{A}$, $\text{B}$. Between $\text{E}$ and $\text{F}$ and between $\text{B}$ and $\text{C}$, there is only a semitone, while between all other adjacent notes there is a whole tone. By sharpening or flattening some of these notes, we can obtain the remaining 5 notes. For example, by sharpening $\text{C}$, we obtain $C\sharp$, which is the same note as $D\flat$, obtained by flattening $\text{D}$. Two distinct note notations describing the same note are called _enharmonically equivalent_.
 
@@ -10,7 +10,7 @@ Thus, the remaining notes are $\text{C}\sharp$, $\text{D}\sharp$, $\text{F}\shar
 > [!PIANO]
 > {"startNote": "C4", "octaves": 1, "displayNoteNames": true, "label": "The 12 notes"}
 
-The set of 7 notes forms a _Major scale_, and the set of all 12 notes forms the _Chromatic scale_. These will be explained further in [the section about scales](../where-the-theory-starts/index.md#scales).
+The set of 7 notes forms a _major scale_, and the set of all 12 notes forms the _chromatic scale_. These will be explained further in [the section about scales](../where-the-theory-starts/index.md#scales).
 
 These 12 notes repeat going up and down octaves. To distinguish two notes in different octaves, the octave number is associated to the name. For example, $\text{A}_4$ denotes the note $\text{A}$ in the fourth octave. To number the octaves, the A440 pitch standard[^1] defines $\text{A}_4$ as having the pitch 440 Hz, and all other notes are derived from it. Doubling (or halving) moves a note up (or down) an octave. For example, $\text{A}_5$ is 880 Hz and $\text{A}_3$ is 220 Hz. All other pitches are derived from it, following a tuning system called a Musical temperament[^2]. There are several different temperaments, each meeting different requirements.
 
@@ -36,20 +36,20 @@ _Intervals_ are differences in pitch between two notes. For example as seen befo
 The terms major, minor, perfect, augmented and diminished are called interval _qualities_ (or _modifiers_). Along with a scale _degree_ (the number of the note in the scale), they describe an interval. Two intervals are enharmonically equivalent when they both describe the same difference in pitch between two notes.
 
 ### Using major, minor and perfect
-These qualities relate to the 7 notes shown above (the Major scale).
+These qualities relate to the 7 notes shown above (the major scale).
 - An interval is perfect if the second note is the same (or on another octave), or a fifth away (above and below).
-- An interval is major if it is not perfect, and the second note is a note from the Major scale.
+- An interval is major if it is not perfect, and the second note is a note from the major scale.
 - An interval is called a tritone if the second note is precisely 6 semitones away.
 - An interval is minor if it is not a tritone, and the second note is not a note from the major scale.
 
-An interval with a major quality refers to an interval where the second note is a note from the Major scale, corresponding to the associated scale degree. For example, $\text{C}$ to $\text{E}$ is a major third because $\text{E}$ is the third note in the Major scale starting from $\text{C}$. 
+An interval with a major quality refers to an interval where the second note is a note from the major scale, corresponding to the associated scale degree. For example, $\text{C}$ to $\text{E}$ is a major third because $\text{E}$ is the third note in the major scale starting from $\text{C}$. 
 
-An interval with a minor quality refers to an interval where the second note is one semitone lower than a major interval. For example, $\text{C}$ to $\text{E}\flat$ is a minor third because $\text{E}\flat$ is one semitone lower than $\text{E}$, which is the third note in the Major scale starting from $\text{C}$.
+An interval with a minor quality refers to an interval where the second note is one semitone lower than a major interval. For example, $\text{C}$ to $\text{E}\flat$ is a minor third because $\text{E}\flat$ is one semitone lower than $\text{E}$, which is the third note in the major scale starting from $\text{C}$.
 
 ### Using augmented and diminished
-These qualities also relate to the Major scale, but act more directly on the associated scale degree.
-- Augmented intervals add a semitone to the scale degree. For example, $\text{C}$ to $\text{G}\sharp$ is an augmented fifth because $\text{G}$ is the fifth note of the Major scale, and the augmented modifier adds a semitone, thus resulting in $\text{G}\sharp$.
-- Diminished intervals move the scale degree 1 step down in the Major scale. For example, $\text{C}$ to $\text{E}$ is a diminished fourth, because $\text{F}$ is the fourth note of the Major scale, and the diminished modifier moves it 1 step down in the Major scale, thus resulting in $\text{D}$. That is with the exception of the tritone, which is also called a diminished fifth even though $\text{F}\sharp$ is not in the Major scale.
+These qualities also relate to the major scale, but act more directly on the associated scale degree.
+- Augmented intervals add a semitone to the scale degree. For example, $\text{C}$ to $\text{G}\sharp$ is an augmented fifth because $\text{G}$ is the fifth note of the major scale, and the augmented modifier adds a semitone, thus resulting in $\text{G}\sharp$.
+- Diminished intervals move the scale degree 1 step down in the major scale. For example, $\text{C}$ to $\text{E}$ is a diminished fourth, because $\text{F}$ is the fourth note of the major scale, and the diminished modifier moves it 1 step down in the major scale, thus resulting in $\text{D}$. That is with the exception of the tritone, which is also called a diminished fifth even though $\text{F}\sharp$ is not in the major scale.
 
 > [!NOTE]
 > Both these systems may seem arbitrary, but they are based on the _circle of fifths_, which is a fundamental concept in music theory. It is explained in [the section about the circle of fifths](../where-the-theory-starts/index.md#the-circle-of-fifths).
