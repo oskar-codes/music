@@ -149,11 +149,11 @@ Two stacked minor thirds form a diminished chord, meaning the $\text{II}$ of $\t
 </div>
 
 > [!NOTE]
-> The two above examples show that the $\text{II}$ is diminished in $\text{D}$ minor and the $\text{V}$ is major in $\text{B}$ harmonic minor, but these chord qualities would be the same for any tonic. This means that the $\text{II}$ of any minor scale is always diminished, and the $\text{V}$ of any harmonic minor scale is always major, regardless of the key they are in.
+> The two above examples show that the $\text{III}$ is minor in $\text{C}$ major and the $\text{II}$ is diminished in $\text{E}$ minor, but these chord qualities would be the same for any tonic. This means that the $\text{III}$ of any major scale is always minor, and the $\text{II}$ of any minor scale is always diminished, regardless of the key they are in.
 
 The following table shows the quality of the triad formed at each scale degree in each of the four scales.
 
-|              | Major scale | Minor scale | Harmonic minor scale | Melodic minor scale |
+|Scale degree  | Major scale | Minor scale | Harmonic minor scale | Melodic minor scale |
 |:------------:|:-----------:|:-----------:|:--------------------:|:-------------------:|
 |$\textbf{I}$  | Major       | Minor       | Minor                | Minor               |
 |$\textbf{II}$ | Minor       | Diminished  | Diminished           | Minor               |
@@ -211,7 +211,7 @@ Like triads, seventh chords also appear in scales. For example the $\text{VI}$ o
 
 The following table shows the quality of the seventh chord formed at each scale degree in each of the four scales.
 
-|              | Major scale    | Minor scale        | Harmonic minor scale | Melodic minor scale |
+|Scale degree  | Major scale    | Minor scale        | Harmonic minor scale | Melodic minor scale |
 |:------------:|:--------------:|:------------------:|:--------------------:|:-------------------:|
 |$\textbf{I}$  | Major 7th      | Minor 7th          | Minor major 7th      | Minor major 7th     |
 |$\textbf{II}$ | Minor 7th      | Half-diminished    | Half-diminished      | Minor 7th           |
