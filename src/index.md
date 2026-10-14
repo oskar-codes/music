@@ -2,7 +2,7 @@
 
 This site contains all I know about music. It serves as an ever-growing materialization of my musical knowledge. Since 2020, I've been constantly learning about music in my free time, learning theory and applying it with my piano-playing skills. Along the years, I've learned many concepts mostly from western music theory, and although I have shifted my focus to Jazz theory, these concepts can still be applied to any form of music. I've written this site for myself, to externalize everything I've learned (and to prevent myself from forgetting things I've learned), but I hope that it can also be useful to others who are interested in learning about music.
 
-The order in which the notions are presented on this site reflect my own chronological learning curve. As such, the earlier pages contain more basic concepts, gradually progressing into more advanced ones as you go deeper into the site. However, I have tried to make each page as self-contained as possible, so that you can jump to any topic that interests you without needing to read everything before it.
+The order in which the notions are presented on this site reflect my own chronological learning curve. As such, the earlier pages contain more basic concepts, gradually progressing into more advanced ones as you go deeper into the site.
 
 Note that I am in no way a musical expert and I have no formal education in music. Everything I've learned has been through self-study, and I am still learning. Everything on this site is bound to evolve as I learn more, and I welcome any feedback or corrections from anyone who notices mistakes or has suggestions for improvement.
 
@@ -13,6 +13,8 @@ Note that I am in no way a musical expert and I have no formal education in musi
 - [Intervals](the-building-blocks/index.md#intervals)
   - [Using major, minor and perfect](the-building-blocks/index.md#using-major-minor-and-perfect)
   - [Using augmented and diminished](the-building-blocks/index.md#using-augmented-and-diminished)
+  - [Above the octave](the-building-blocks/index.md#above-the-octave)
+  - [Inversions](the-building-blocks/index.md#inversions)
 - [Transposition](the-building-blocks/index.md#transposition)
 
 ### [II. Where the theory starts](where-the-theory-starts/index.md)
@@ -22,6 +24,7 @@ Note that I am in no way a musical expert and I have no formal education in musi
   - [The harmonic minor scale](where-the-theory-starts/index.md#the-harmonic-minor-scale)
   - [The melodic minor scale](where-the-theory-starts/index.md#the-melodic-minor-scale)
   - [Important terminology](where-the-theory-starts/index.md#important-terminology)
+    - [Diatonic scales](where-the-theory-starts/index.md#diatonic-scales)
     - [Scale degrees](where-the-theory-starts/index.md#scale-degrees)
     - [Keys](where-the-theory-starts/index.md#keys)
     - [Key signatures](where-the-theory-starts/index.md#key-signatures)
@@ -31,11 +34,21 @@ Note that I am in no way a musical expert and I have no formal education in musi
   - [Seventh chords](where-the-theory-starts/index.md#seventh-chords)
   - [Seventh chords in scales](where-the-theory-starts/index.md#seventh-chords-in-scales)
   - [Inversions](where-the-theory-starts/index.md#inversions)
-- [The circle of fifths](where-the-theory-starts/index.md#the-circle-of-fifths)
+  - [Slash chords](where-the-theory-starts/index.md#slash-chords)
+
+### [III. The Circle Of Fifths](the-circle-of-fifths/index.md)
+- [Introduction](the-circle-of-fifths/index.md#introduction)
+- [Structure](the-circle-of-fifths/index.md#structure)
+- [Using the circle of fifths](the-circle-of-fifths/index.md#using-the-circle-of-fifths)
+  - [Diatonic scales](the-circle-of-fifths/index.md#diatonic-scales)
+  - [Key signatures](the-circle-of-fifths/index.md#key-signatures)
+  - [Intervals](the-circle-of-fifths/index.md#intervals)
+  - [Chords](the-circle-of-fifths/index.md#chords)
+
 
 ### [III. Deeper into scales](deeper-into-scales/index.md)
-- [Advanced scales](deeper-into-scales/index.md#advanced-scales)
 - [Modes](deeper-into-scales/index.md#modes)
+- [Advanced scales](deeper-into-scales/index.md#advanced-scales)
 
 ### [IV. Deeper into chords](deeper-into-chords/index.md)
 - [Advanced chords](deeper-into-chords/index.md#advanced-chords)

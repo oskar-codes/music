@@ -1371,6 +1371,18 @@ from https://github.com/mjbvz/vscode-github-markdown-preview-style/blob/master/d
   CUSTOM CSS FOLLOWS
 */
 
+:root {
+  --piano-highlight-color: #78cbcbff;
+  --piano-secondary-highlight-color: #8fe276ff;
+}
+
+.outlined {
+  color: var(--piano-highlight-color)
+}
+.outlined-secondary {
+  color: var(--piano-secondary-highlight-color);
+}
+
 .piano {
   margin: 20px auto;
   width: min-content;
