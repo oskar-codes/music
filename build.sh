@@ -33,7 +33,7 @@ parsing()
   start_time=`date +%s%N | cut -b1-13`
   html=$(cmark-gfm "$f" -e footnotes -e table -e strikethrough -e autolink -e tagfilter -e tasklist --unsafe)
   check_error
-  echo "$html" > out/tmp/.tmp_body.html
+  printf '%s\n' "$html" > out/tmp/.tmp_body.html
   end_time=`date +%s%N | cut -b1-13`
 
   echo "   - cmark-gfm done. (`expr $end_time - $start_time`ms)"
@@ -44,7 +44,7 @@ post_processing()
   start_time=`date +%s%N | cut -b1-13`
   post=$(node processing/post-processing.js -file="out/tmp/.tmp_html.html")
   check_error
-  echo "$post" > out/tmp/.tmp_body.html
+  printf '%s\n' "$post" > out/tmp/.tmp_body.html
   end_time=`date +%s%N | cut -b1-13`
 
   echo "   - Post-processing done. (`expr $end_time - $start_time`ms)"
