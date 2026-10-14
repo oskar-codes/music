@@ -6,7 +6,7 @@ A _Scale_ is a set of notes between one note and its octave. A scale can contain
 > [!PIANO]
 > {"startNote": "C4", "octaves": 1, "displayNoteNames": true, "label": "The 12 notes of the Chromatic scale"}
 
-The 7 white notes ($\text{C}$, $\text{D}$, $\text{E}$, $\text{F}$, $\text{G}$, $\text{A}$ and $\text{B}$) form what is known as a major scale. More specifically, this set of notes is the $\textbf{C}$ major scale. Note that this specific set of notes was originally exists because "they sound good together", but this can also be explained using the [circle of fifths](#the-circle-of-fifths).
+The 7 white notes ($\text{C}$, $\text{D}$, $\text{E}$, $\text{F}$, $\text{G}$, $\text{A}$ and $\text{B}$) form what is known as a major scale. More specifically, this set of notes is the $\textbf{C}$ major scale. Note that this specific set of notes was originally exists because "they sound good together", but this can also be explained using the [circle of fifths](../the-circle-of-fifths/index.md).
 
 ### Scales as interval sets
 A scale can be defined as a set of notes, but it is generally more useful to see it as a set of intervals. That way, one can [transpose](../the-building-blocks/index.md#transposition) the intervals to any tonic, and obtain the corresponding scale.
@@ -228,11 +228,34 @@ For visualizations of these chords, see the following pages:
 - [Seventh chords of the melodic minor scale](../resources/seventh-chords/melodic-minor.md)
 
 ### Inversions
+The chords shown above were all in _root position_. That is, the lowest note of the chord was always the root. _Inversions_ on the other hand are chord voicings where the lowest note (the bass note) is not the root, but any other note of the chord. Inversions are numbered by the chord tone they have as bass, e.g. if the bass is the second note of the chord, the voicing is called a _first_ inversion. For example, $\text{C}$ major with $\text{E}$ as bass note is $\text{C}$ major 1st inversion, while with $\text{G}$ as bass note it is $\text{C}$ major 2nd inversion. See the below examples.
 
-## The circle of fifths
+<div style="display: flex; flex-wrap: wrap;">
+  <blockquote>
+    [!PIANO]
+    {"startNote": "C4", "octaves": 1, "displayNoteNames": true, "label": "$\\text{A}$ Major 1st inversion", "secondaryHighlightedNotes": ["C#4", "E4", "A4"]}
+  </blockquote>
 
+  <blockquote>
+    [!PIANO]
+    {"startNote": "C4", "octaves": 1, "displayNoteNames": true, "label": "$\\text{G}$ Minor 2nd inversion", "secondaryHighlightedNotes": ["D4", "G4", "A#4"]}
+  </blockquote>
 
-The _circle of fifths_ is a visual representation of the relationships between the 12 notes of the chromatic scale, their corresponding key signatures, and the associated major and minor keys. It is a crucial concept to understand and keep in mind, because it helps navigate the complexities of key changes, chord progressions, and modulation. It encompasses notes, chords and scales and thus ties together the foundational concepts of music theory.
+  <blockquote>
+    [!PIANO]
+    {"startNote": "C4", "octaves": 1, "displayNoteNames": true, "label": "$\\text{D}$ Major 7th 3rd inversion", "secondaryHighlightedNotes": ["C#4", "D4", "F#4", "A4"]}
+  </blockquote>
+</div>
+
+### Slash chords
+Inversions are a type of slash chord. A _slash chord_ is a chord where the root is not the bass note, and can be any other note of the chromatic scale. It is called a slash chord due to its notation: the chord is written first, followed by a slash and then the bass note. For example, $\text{C}/\text{E}$ is a $\text{C}$ major chord with $\text{E}$ as bass note, which is the same as $\text{C}$ major 1st inversion.
+
+> [!PIANO]
+> {"startNote": "C4", "octaves": 1, "displayNoteNames": true, "label": "$\\\text{E}/\\\text{D}$ chord. The chord itself can be seen as an $\\\text{E7}$ chord.", "highlightedNotes": ["D4"], "secondaryHighlightedNotes": ["E4", "G#4", "B4"]}
+
+> [!NOTE]
+> It can sometimes be useful to consider seventh chords as slash chords. For example, a $\text{C}$ major 7th chord can be seen as a $\text{E}$ minor chord with $\text{C}$ as bass note: $\text{Em}/\text{C}$, which is enharmonically equivalent to $\text{Cmaj7}$. This can also be applied to more advanced chords with further extensions and forms the basis of rootless voicings, which will be explored later.
+
 
 > [!CENTER]
-> Continue to [III. Deeper into scales](../deeper-into-scales/index.md) or go back to the [front-page](../index.md).
+> Continue to [III. The Circle Of Fifths](../the-circle-of-fifths/index.md) or go back to the [front-page](../index.md).
