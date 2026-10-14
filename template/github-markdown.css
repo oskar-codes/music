@@ -1379,6 +1379,7 @@ from https://github.com/mjbvz/vscode-github-markdown-preview-style/blob/master/d
 .outlined {
   color: var(--piano-highlight-color)
 }
+
 .outlined-secondary {
   color: var(--piano-secondary-highlight-color);
 }
