@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="/music/github-markdown.css">
     <script src="/music/hljs/highlight.min.js"></script>
     <script src="/music/qwerty-hancock.js"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+    <script id="MathJax-script" async src="/music/mathjax/tex-mml-svg.js"></script>
     <script>
       MathJax = {
         tex: {
@@ -165,10 +165,75 @@
 </ul>
 <blockquote>
 <p>[!NOTE]
-Both these systems may seem arbitrary, but they are based on the <em>circle of fifths</em>, which is a fundamental concept in music theory. It is explained in <a href="../where-the-theory-starts/index.md#the-circle-of-fifths">the section about the circle of fifths</a>.</p>
+Both these systems may seem arbitrary, but they are based on the <em>circle of fifths</em>, which is a fundamental concept in music theory. It is explained in <a href="../the-circle-of-fifths/index.md">the section about the circle of fifths</a>.</p>
 </blockquote>
 <h3>Above the octave</h3>
 <p>Intervals can also extend to above an octave, where the scale degree continues above 8 (the perfect octave). For example, a ninth from $\text{C}$ is $\text{D}$, but an octave further. Even though the second and ninth notes are enharmonically equivalent, they are useful for denoting chords. Notes in chords also often use a slightly different interval naming system, especially in Jazz. See <a href="../deeper-into-chords/index.md#advanced-chords">the section about advanced chords</a>.</p>
+<h3>Inversions</h3>
+<p><em>Inverting</em> an interval means taking the lower note of the interval and moving it up by an octave. This produces another interval. For example let's consider the interval between $\text{C}$ and $\text{E}$. It forms a major third, because they are 4 semitones apart. Now inverting this interval would mean taking the lower note, e.g. $\text{C}$, and putting it one octave above. This leads to a minor sixth, because there are 8 semitones between $\text{E}$ and the $\text{C}$ an octave above.</p>
+<table>
+  <thead>
+    <tr>
+      <th>Interval</th>
+      <th>Inverted interval</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="outlined">Perfect unison</td>
+      <td class="outlined-secondary">Octave</td>
+    </tr>
+    <tr>
+      <td class="outlined">Minor second</td>
+      <td class="outlined-secondary">Major seventh</td>
+    </tr>
+    <tr>
+      <td class="outlined">Major second</td>
+      <td class="outlined-secondary">Minor seventh</td>
+    </tr>
+    <tr>
+      <td class="outlined">Minor third</td>
+      <td class="outlined-secondary">Major sixth</td>
+    </tr>
+    <tr>
+      <td class="outlined">Major third</td>
+      <td class="outlined-secondary">Minor sixth</td>
+    </tr>
+    <tr>
+      <td class="outlined">Perfect fourth</td>
+      <td class="outlined-secondary">Perfect fifth</td>
+    </tr>
+    <tr>
+      <td>Tritone</td>
+      <td>Tritone</td>
+    </tr>
+    <tr>
+      <td class="outlined-secondary">Perfect fifth</td>
+      <td class="outlined">Perfect fourth</td>
+    </tr>
+    <tr>
+      <td class="outlined-secondary">Minor sixth</td>
+      <td class="outlined">Major third</td>
+    </tr>
+    <tr>
+      <td class="outlined-secondary">Major sixth</td>
+      <td class="outlined">Minor third</td>
+    </tr>
+    <tr>
+      <td class="outlined-secondary">Minor seventh</td>
+      <td class="outlined">Major second</td>
+    </tr>
+    <tr>
+      <td class="outlined-secondary">Major seventh</td>
+      <td class="outlined">Minor second</td>
+    </tr>
+    <tr>
+      <td class="outlined-secondary">Octave</td>
+      <td class="outlined">Perfect unison</td>
+    </tr>
+  </tbody>
+</table>
+<p>This table shows several interesting patterns. Firstly, we notice the alternating major/minor qualities, e.g. a major third inverts to a minor sixth, a minor seventh inverts to a major second. Secondly, we observe a symmetry around the tritone: the intervals up until the tritone have the same inversions as the ones following the tritone, in reverse order.</p>
 <h2>Transposition</h2>
 <p>A crucial concept to understand in music is <em>transposition</em>. The interval system explained above was based on $\text{C}$, meaning for example that $\text{D}$ was named a major second because it is the second note of the $\textbf{C}$ major scale. But many times, $\text{C}$ is not the reference note and as such any of the other 12 notes could be the &quot;reference&quot; note. This note is called the <em>tonic</em>, or the <em>first degree</em>. For example, choosing $\text{G}$ as the tonic results in $\text{C}$ being the perfect fourth of $\text{G}$, because $\text{C}$ is 5 semitones away from $\text{G}$.</p>
 <p>Transposition works with intervals, but also with any other set of notes. Chords, scales, modes (these are concepts which will be explained later), or entire musical pieces can also be transposed, just by keeping every interval between notes the same, but moving the tonic.</p>

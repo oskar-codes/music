@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="/music/github-markdown.css">
     <script src="/music/hljs/highlight.min.js"></script>
     <script src="/music/qwerty-hancock.js"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+    <script id="MathJax-script" async src="/music/mathjax/tex-mml-svg.js"></script>
     <script>
       MathJax = {
         tex: {
@@ -50,7 +50,7 @@
 <p>[!PIANO]
 {&quot;startNote&quot;: &quot;C4&quot;, &quot;octaves&quot;: 1, &quot;displayNoteNames&quot;: true, &quot;label&quot;: &quot;The 12 notes of the Chromatic scale&quot;}</p>
 </blockquote>
-<p>The 7 white notes ($\text{C}$, $\text{D}$, $\text{E}$, $\text{F}$, $\text{G}$, $\text{A}$ and $\text{B}$) form what is known as a major scale. More specifically, this set of notes is the $\textbf{C}$ major scale. Note that this specific set of notes was originally exists because &quot;they sound good together&quot;, but this can also be explained using the <a href="#the-circle-of-fifths">circle of fifths</a>.</p>
+<p>The 7 white notes ($\text{C}$, $\text{D}$, $\text{E}$, $\text{F}$, $\text{G}$, $\text{A}$ and $\text{B}$) form what is known as a major scale. More specifically, this set of notes is the $\textbf{C}$ major scale. Note that this specific set of notes was originally exists because &quot;they sound good together&quot;, but this can also be explained using the <a href="../the-circle-of-fifths/index.md">circle of fifths</a>.</p>
 <h3>Scales as interval sets</h3>
 <p>A scale can be defined as a set of notes, but it is generally more useful to see it as a set of intervals. That way, one can <a href="../the-building-blocks/index.md#transposition">transpose</a> the intervals to any tonic, and obtain the corresponding scale.</p>
 <p>Let's see an example. We denote a semitone (half-step) as $\text{H}$ and a whole step as $\text{W}$. Then, taking the notes of the $\text{C}$ major scale and starting from $\text{C}$, we have the following intervals: $\text{W}$ - $\text{W}$ - $\text{H}$ - $\text{W}$ - $\text{W}$ - $\text{W}$ - $\text{H}$. This is the definition of the major scale.</p>
@@ -373,11 +373,34 @@ The two above examples show that the $\text{III}$ is minor in $\text{C}$ major a
 <li><a href="../resources/seventh-chords/melodic-minor.md">Seventh chords of the melodic minor scale</a></li>
 </ul>
 <h3>Inversions</h3>
-<h2>The circle of fifths</h2>
-<p>The <em>circle of fifths</em> is a visual representation of the relationships between the 12 notes of the chromatic scale, their corresponding key signatures, and the associated major and minor keys. It is a crucial concept to understand and keep in mind, because it helps navigate the complexities of key changes, chord progressions, and modulation. It encompasses notes, chords and scales and thus ties together the foundational concepts of music theory.</p>
+<p>The chords shown above were all in <em>root position</em>. That is, the lowest note of the chord was always the root. <em>Inversions</em> on the other hand are chord voicings where the lowest note (the bass note) is not the root, but any other note of the chord. Inversions are numbered by the chord tone they have as bass, e.g. if the bass is the second note of the chord, the voicing is called a <em>first</em> inversion. For example, $\text{C}$ major with $\text{E}$ as bass note is $\text{C}$ major 1st inversion, while with $\text{G}$ as bass note it is $\text{C}$ major 2nd inversion. See the below examples.</p>
+<div style="display: flex; flex-wrap: wrap;">
+  <blockquote>
+    [!PIANO]
+    {"startNote": "C4", "octaves": 1, "displayNoteNames": true, "label": "$\\text{A}$ Major 1st inversion", "secondaryHighlightedNotes": ["C#4", "E4", "A4"]}
+  </blockquote>
+  <blockquote>
+    [!PIANO]
+    {"startNote": "C4", "octaves": 1, "displayNoteNames": true, "label": "$\\text{G}$ Minor 2nd inversion", "secondaryHighlightedNotes": ["D4", "G4", "A#4"]}
+  </blockquote>
+  <blockquote>
+    [!PIANO]
+    {"startNote": "C4", "octaves": 1, "displayNoteNames": true, "label": "$\\text{D}$ Major 7th 3rd inversion", "secondaryHighlightedNotes": ["C#4", "D4", "F#4", "A4"]}
+  </blockquote>
+</div>
+<h3>Slash chords</h3>
+<p>Inversions are a type of slash chord. A <em>slash chord</em> is a chord where the root is not the bass note, and can be any other note of the chromatic scale. It is called a slash chord due to its notation: the chord is written first, followed by a slash and then the bass note. For example, $\text{C}/\text{E}$ is a $\text{C}$ major chord with $\text{E}$ as bass note, which is the same as $\text{C}$ major 1st inversion.</p>
+<blockquote>
+<p>[!PIANO]
+{&quot;startNote&quot;: &quot;C4&quot;, &quot;octaves&quot;: 1, &quot;displayNoteNames&quot;: true, &quot;label&quot;: &quot;$\\text{E}/\\text{D}$ chord. The chord itself can be seen as an $\\text{E7}$ chord.&quot;, &quot;highlightedNotes&quot;: [&quot;D4&quot;], &quot;secondaryHighlightedNotes&quot;: [&quot;E4&quot;, &quot;G#4&quot;, &quot;B4&quot;]}</p>
+</blockquote>
+<blockquote>
+<p>[!NOTE]
+It can sometimes be useful to consider seventh chords as slash chords. For example, a $\text{C}$ major 7th chord can be seen as a $\text{E}$ minor chord with $\text{C}$ as bass note: $\text{Em}/\text{C}$, which is enharmonically equivalent to $\text{Cmaj7}$. This can also be applied to more advanced chords with further extensions and forms the basis of rootless voicings, which will be explored later.</p>
+</blockquote>
 <blockquote>
 <p>[!CENTER]
-Continue to <a href="../deeper-into-scales/index.md">III. Deeper into scales</a> or go back to the <a href="../index.md">front-page</a>.</p>
+Continue to <a href="../the-circle-of-fifths/index.md">III. The Circle Of Fifths</a> or go back to the <a href="../index.md">front-page</a>.</p>
 </blockquote>
   </body>
 </html>

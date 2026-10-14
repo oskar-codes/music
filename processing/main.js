@@ -72,8 +72,8 @@
           octaves,
           whiteNotesColour: 'white',
           blackNotesColour: 'black',
-          activeColour: '#78cbcbff',
-          secondaryActiveColour: '#8fe276ff', // '#cd8ea9ff'
+          activeColour: 'var(--piano-highlight-color)',
+          secondaryActiveColour: 'var(--piano-secondary-highlight-color)',
           musicalTyping: false,
           enableMouse: false,
           displayNoteNames,
@@ -98,6 +98,186 @@
         blockquote.innerHTML = contents;
       }
     },
+
+    circleOfFifthsBlockquotes() {
+      const blockquotes = document.querySelectorAll('blockquote');
+      for (const blockquote of blockquotes) {
+        const text = blockquote.textContent;
+        if (!text.includes('[!COF]')) continue;
+
+        const dataText = text.replace('[!COF]', '').trim();
+
+        const {
+          width = 500,
+          height = 500,
+          noteRadius = 30,
+          highlightedNotes = [],
+          highlightedRelativeMinors = [],
+          showSeparators = true,
+          showRelativeMinors = false,
+          connectingLines = [],
+          showKeySignatures = false
+        } = dataText ? JSON.parse(dataText) : {};
+
+        const cx = width / 2;
+        const cy = height / 2;
+        const radius = height / 2 - 50;
+
+        // List of SVG files for key signatures, stored in /music/assets/
+        const keySignatures = [
+          'C-major_a-minor',
+          'G-major_e-minor',
+          'D-major_b-minor',
+          'A-major_f-sharp-minor',
+          'E-major_c-sharp-minor',
+          'B-major_g-sharp-minor',
+          'F-sharp-major_d-sharp-minor',
+          'D-flat-major_b-flat-minor',
+          'A-flat-major_f-minor',
+          'E-flat-major_c-minor',
+          'B-flat-major_g-minor',
+          'F-major_d-minor'
+        ]
+
+        blockquote.outerHTML = `
+          <div class="circle-of-fifths">
+            <svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="${cx}" cy="${cy}" r="${radius}" fill="none" stroke="white" stroke-width="2"/>
+              <g fill="white" font-size="24" text-anchor="middle" dominant-baseline="middle">
+                ${
+                  Array.from({length: 12}).map((_, i) => {
+                    const angle = (i / 12) * 2 * Math.PI - Math.PI / 2;
+                    const x = cx + (radius - noteRadius) * Math.cos(angle);
+                    const y = cy + (radius - noteRadius) * Math.sin(angle);
+                    const noteName = [
+                      'C', 'G', 'D', 'A', 'E', 'B',
+                      'F# / Gb', 'Db', 'Ab', 'Eb', 'Bb', 'F'
+                    ][i];
+                    let note = "";
+                    if (i === 6) {
+                      note = '\\text{F}\\sharp / \\text{G}\\flat';
+                    } else {
+                      const modifier = noteName.includes('#') ? '\\sharp' :
+                                       noteName.includes('b') ? '\\flat' : '';
+                      const baseNote = noteName.replace('#', '').replace('b', '');
+                      note = `\\text{${baseNote}}${modifier}`;
+                    }
+                    const isHighlighted = highlightedNotes.includes(i);
+
+                    let relativeMinor = "";
+                    if (showRelativeMinors) {
+                      const relMinorIndex = (i + 9) % 12;
+                      const relAngle = (relMinorIndex / 12) * 2 * Math.PI - Math.PI / 2;
+                      const relX = cx + (radius - noteRadius - 60) * Math.cos(relAngle);
+                      const relY = cy + (radius - noteRadius - 60) * Math.sin(relAngle);
+                      const relNoteName = [
+                        'a', 'e', 'b', 'f#', 'c#', 'g#',
+                        'd# / eflat', 'bflat', 'f', 'c', 'g', 'd'
+                      ][relMinorIndex];
+                      let relNote = "";
+                      if (relMinorIndex === 6) {
+                        relNote = '\\text{d}\\sharp / \\text{e}\\flat';
+                      } else {
+                        const relModifier = relNoteName.includes('#') ? '\\sharp' :
+                                           relNoteName.includes('flat') ? '\\flat' : '';
+                        const relBaseNote = relNoteName.replace('#', '').replace('flat', '');
+                        relNote = `\\text{${relBaseNote}}${relModifier}`;
+                      }
+                      const isRelHighlighted = highlightedRelativeMinors.includes(relMinorIndex);
+
+                      relativeMinor = `
+                        <foreignObject x="${relX - 30}" y="${relY - 20}" width="60" height="40" style="overflow: visible;">
+                          <div ${isRelHighlighted ? 'class="highlighted-note"' : ''} xmlns="http://www.w3.org/1999/xhtml" style="color: white; font-size: 20px; text-align: center;">
+                            $${relNote}$
+                          </div>
+                        </foreignObject>
+                      `;
+                    }
+
+                    return `
+                      <foreignObject x="${x - 40}" y="${y - 20}" width="80" height="40" style="overflow: visible;">
+                        <div ${isHighlighted ? 'class="secondary-highlighted-note"' : ''} xmlns="http://www.w3.org/1999/xhtml" style="color: white; font-size: 24px; text-align: center;">
+                          $${note}$
+                        </div>
+                      </foreignObject>
+                      ${relativeMinor}
+                    `;
+                  }).join('')
+                }
+              </g>
+              ${showSeparators ? `
+                <g fill="white">
+                  ${
+                    Array.from({length: 6}).map((_, i) => {
+                      const angle = (i / 12) * 2 * Math.PI - Math.PI / 2 + Math.PI / 12;
+                      const x1 = cx + (radius + 40) * Math.cos(angle);
+                      const y1 = cy + (radius + 40) * Math.sin(angle);
+                      const x2 = cx - (radius + 40) * Math.cos(angle);
+                      const y2 = cy - (radius + 40) * Math.sin(angle);
+                      return `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="white" stroke-width="2"/>`;
+                    }).join('')
+                  }
+                </g>
+              ` : ''}
+              <g stroke="white" stroke-width="2">
+                ${
+                  connectingLines.map(pair => {
+                    const [from, to] = pair;
+                    const angleFrom = (from / 12) * 2 * Math.PI - Math.PI / 2;
+                    const angleTo = (to / 12) * 2 * Math.PI - Math.PI / 2;
+
+                    const x1 = cx + (radius - noteRadius) * Math.cos(angleFrom);
+                    const y1 = cy + (radius - noteRadius) * Math.sin(angleFrom);
+                    const x2 = cx + (radius - noteRadius) * Math.cos(angleTo);
+                    const y2 = cy + (radius - noteRadius) * Math.sin(angleTo);
+
+                    const lineAngle = Math.atan2(y2 - y1, x2 - x1);
+                    const offsetX = 20 * Math.cos(lineAngle);
+                    const offsetY = 20 * Math.sin(lineAngle);
+
+                    return `<line x1="${x1 + offsetX}" y1="${y1 + offsetY}" x2="${x2 - offsetX}" y2="${y2 - offsetY}"/>`;
+                  }).join('')
+                }
+              </g>
+              </svg>
+            <div class="svg-container keys-container" style="width: ${width}px; height: ${height}px;">
+              ${
+                showKeySignatures ? Array.from({length: 12}).map((_, i) => {
+                  const angle = (i / 12) * 2 * Math.PI - Math.PI / 2;
+                  const x = cx + (radius + 30) * Math.cos(angle) - 30;
+                  const y = cy + (radius + 30) * Math.sin(angle) - 40;
+                  const keySigFile = keySignatures[i];
+                  return `
+                    <div class="key-signature" style="left: ${x}px; top: ${y}px;" data-key-signature="${keySigFile}">
+                      <embed
+                        src="/music/assets/${keySigFile}.svg"
+                        onload="const e = event.target; e.parentElement.replaceChild(e.getSVGDocument().documentElement.cloneNode(true), e);"
+                      />
+                    </div>
+                  `;
+                }).join('') : ''
+              }
+            </div>
+          </div>
+        `;
+
+      }
+
+
+    },
+
+    setSVGEmbeds() {
+      const embeds = document.querySelectorAll('embed.svg-embed');
+      for (const embed of embeds) {
+        embed.addEventListener('load', event => {
+          const e = event.target;
+          const svg = e.getSVGDocument().documentElement;
+          const node = svg.cloneNode(true);
+          e.parentElement.replaceChild(node, e);
+          node.style.margin = '0 20px';
+        });
+      }
+    },
     
     addAlerts() {
       const alerts = ['note', 'warning', 'important', 'caution', 'tip'];
@@ -108,6 +288,14 @@
         important: 'M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z',
         caution: 'M4.47.22A.749.749 0 0 1 5 0h6c.199 0 .389.079.53.22l4.25 4.25c.141.14.22.331.22.53v6a.749.749 0 0 1-.22.53l-4.25 4.25A.749.749 0 0 1 11 16H5a.749.749 0 0 1-.53-.22L.22 11.53A.749.749 0 0 1 0 11V5c0-.199.079-.389.22-.53Zm.84 1.28L1.5 5.31v5.38l3.81 3.81h5.38l3.81-3.81V5.31L10.69 1.5ZM8 4a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 8 4Zm0 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z',
         tip: 'M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456 0 0 0-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75ZM5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z'
+      }
+
+      const titles = {
+        note: 'Note',
+        warning: 'Warning',
+        important: 'Important',
+        caution: 'Caution',
+        tip: 'Usage'
       }
     
       const blockquotes = document.querySelectorAll('blockquote');
@@ -126,7 +314,7 @@
                 <svg class="octicon mr-2" class="markdown-alert-icon" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
                   <path d="${icons[alert]}"></path>
                 </svg>
-                ${alert[0].toUpperCase() + alert.slice(1)}
+                ${titles[alert]}
               </p>
               ${contents}
             `

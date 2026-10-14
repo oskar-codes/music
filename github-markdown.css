@@ -1371,6 +1371,18 @@ from https://github.com/mjbvz/vscode-github-markdown-preview-style/blob/master/d
   CUSTOM CSS FOLLOWS
 */
 
+:root {
+  --piano-highlight-color: #78cbcbff;
+  --piano-secondary-highlight-color: #8fe276ff;
+}
+
+.outlined {
+  color: var(--piano-highlight-color)
+}
+.outlined-secondary {
+  color: var(--piano-secondary-highlight-color);
+}
+
 .piano {
   margin: 20px auto;
   width: min-content;
@@ -1399,3 +1411,61 @@ from https://github.com/mjbvz/vscode-github-markdown-preview-style/blob/master/d
 .piano li[data-note-type="black"]::after {
   color: white;
 }
+
+.circle-of-fifths {
+  text-align: center;
+  margin: 20px 0;
+  position: relative;
+}
+
+.circle-of-fifths .highlighted-note {
+  color: var(--piano-highlight-color) !important;
+}
+
+.circle-of-fifths .secondary-highlighted-note {
+  color: var(--piano-secondary-highlight-color) !important;
+}
+
+.svg-container polyline, .svg-container use {
+  stroke: white !important;
+  fill: white !important;
+}
+
+.keys-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 500px;
+  height: 500px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.keys-container .key-signature {
+  position: absolute;
+  width: 60px;
+  height: 80px;
+}
+
+.keys-container .key-signature > svg {
+  width: 100%;
+  height: 100%;
+}
+
+@media (prefers-color-scheme: light) {
+  .circle-of-fifths circle {
+    stroke: black !important;
+  }
+  .circle-of-fifths line {
+    stroke: black !important;
+  }
+  .circle-of-fifths div {
+    color: black !important;
+  }
+  .svg-container polyline, .svg-container use {
+    stroke: black !important;
+    fill: black !important;
+  }
+}
+
