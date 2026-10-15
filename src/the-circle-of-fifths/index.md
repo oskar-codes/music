@@ -74,7 +74,7 @@ This also happens to be true about the $\text{D}\flat$ and $\text{B}$ scale. $\t
 
 <div class="svg-container" style="text-align: center;">
   <embed class="svg-embed" src="/music/assets/C-flat-major_a-flat-minor.svg" />
-  <embed class="svg-embed" src="/music/assets/b-major_g-sharp-minor.svg" />
+  <embed class="svg-embed" src="/music/assets/B-major_g-sharp-minor.svg" />
 
   <blockquote>
     [!CENTER]
